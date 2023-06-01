@@ -1,0 +1,59 @@
+
+
+#character table for A \tensor A, A asymmetric rank 3 SITA#
+
+k:=Indeterminate(Rationals,"k"); 
+l:=Indeterminate(Rationals,"l");
+r:=Indeterminate(Rationals,"r");
+s:=Indeterminate(Rationals,"s");
+
+A:=r^0*[[1,-2*r*r-2*r-1,-2*r*r-2*r-1],[1,r,-1-r],[1,-1-r,r]];  
+
+T:=KroneckerProduct(A,A); 
+
+T1:=TransposedMat(T);
+
+## Set U lists conditions that are not feasible##
+
+U:=[r+1/2*r^0, r-1/2, 2*r+1, r+1, r-1/4, 2*r^2+2*r+1, r^2+1/2*r, r^2+3/2*r+1/2, r^2+5/2*r+1, r^2-1/2*r-1/2, 4*r^2+4*r+1, r^2+r+1/4, 
+ r^3+2*r^2+7/4*r+1/2, r^3+r^2+5/4*r+1/2, r^3+5/2*r^2+3*r+1, r^3+1/2*r^2+2*r+1, r^3+5/2*r^2+2*r+1/2, r^3+7/2*r^2+5/2*r+1/2, 
+ r^3+2*r^2+5/4*r+1/4, r^3+1/2*r^2+r+1/2, r^3+1/2*r^2-r-1/2, r^3+3/2*r^2+r+1/4, r^3+3/2*r^2+3/4*r+1/8, r^3+r^2+3/4*r+1/4,
+ r^3+3/2*r^2+2*r+3/4, r^3+3/2*r^2+5/4*r+3/8, r^3+3/2*r^2-1/2*r-1/2, r^3+r^2+9/4*r+3/4];
+L1:=[]; 
+
+for P in PartitionsSet([2..9]) do 
+
+T21:=[ T1[1] ]; 
+for i in [1..Length(P)] do 
+  a:=0*T1[1]; 
+  for j in [1..Length(P[i])] do 
+    a:=a+T1[P[i][j]]; 
+  od; 
+  T21[i+1]:=a; 
+od; 
+
+T2:=TransposedMat(T21); 
+
+
+for i in [2..8] do 
+for j in [i+1..9] do 
+ L:=T2[i]-T2[j]; 
+ if AsSet(L)=[0*k] then 
+ Print(i,"=",j," ",[0],"\n");
+ Add(L1,[P,i,"=",j," ",[0]]);
+ else
+ V:=VectorSpace(Rationals,L); 
+ B:=Basis(V);  
+ W:=ReducedGrobnerBasis(B,MonomialLexOrdering()); 
+ if Size(Intersection(W,U))=0 then 
+ Print(i,"=",j," ",W,"\n"); 
+ Add(L1,[P,i,"=",j," ",W]); 
+ fi;
+ fi;
+od; 
+od; 
+
+if Length(L1)>0 then 
+if L1[Length(L1)][1]=P then Print(P,"\n \n"); fi; fi;  
+
+od; 
