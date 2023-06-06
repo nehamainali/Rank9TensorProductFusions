@@ -279,7 +279,7 @@ gap> Read("TAFusions.txt");
 
 
 ********************  Special case u=0 ******************
-** We get 12 additional fusions for the case when u=0 implying r=(-1+ER(-3))/2 **
+** We get 14 additional fusions for the case when u=0 implying r=(-1+ER(-3))/2 **
 
 
 2=3 [ r^3+3/2*r^2+3/2*r+1/2 ]
@@ -382,7 +382,15 @@ gap> Read("TAFusions.txt");
 6=8 [ 0 ]
 [ [ 2, 3, 4, 6, 7, 8 ], [ 5 ], [ 9 ] ]  %% u=0 case %%
 
+2=8 [ r^3+3/2*r^2+3/2*r+1/2 ]
+3=6 [ r^3+3/2*r^2+3/2*r+1/2 ]
+4=7 [ r^3+3/2*r^2+3/2*r+1/2 ]
+[ [ 2 ], [ 3 ], [ 4, 9 ], [ 5, 7 ], [ 6, 8 ] ]  %% u=0 case %%
 
+2=5 [ r^3+3/2*r^2+3/2*r+1/2 ]
+3=9 [ r^3+3/2*r^2+3/2*r+1/2 ]
+4=7 [ r^3+3/2*r^2+3/2*r+1/2 ]
+[ [ 2 ], [ 3 ], [ 4, 8 ], [ 5, 9 ], [ 6, 7 ] ]  %% u=0 case %%
 
 %%%%%%%%%%%%%%%% Fusions ruled out using Bannai-Muzychuk%%%%%%%%%%%%%%5
 ** For all of these fusions even if we assume that all row equalities are satisfied, the number of distinct rows are strictly more than the rank **
@@ -583,11 +591,6 @@ gap> Read("TAFusions.txt");
 4=7 [ r^3+3/2*r^2+3/2*r+1/2 ]
 [ [ 2 ], [ 3 ], [ 4, 9 ], [ 5, 6, 7, 8 ] ]
  
-2=8 [ r^3+3/2*r^2+3/2*r+1/2 ]
-3=6 [ r^3+3/2*r^2+3/2*r+1/2 ]
-4=7 [ r^3+3/2*r^2+3/2*r+1/2 ]
-[ [ 2 ], [ 3 ], [ 4, 9 ], [ 5, 7 ], [ 6, 8 ] ]
- 
 4=7 [ r^3+3/2*r^2+3/2*r+1/2 ]
 [ [ 2 ], [ 3 ], [ 4, 9 ], [ 5, 8 ], [ 6, 7 ] ]
  
@@ -613,11 +616,6 @@ gap> Read("TAFusions.txt");
  
 4=7 [ r^3+3/2*r^2+3/2*r+1/2 ]
 [ [ 2 ], [ 3 ], [ 4, 8 ], [ 5, 7 ], [ 6, 9 ] ]
- 
-2=5 [ r^3+3/2*r^2+3/2*r+1/2 ]
-3=9 [ r^3+3/2*r^2+3/2*r+1/2 ]
-4=7 [ r^3+3/2*r^2+3/2*r+1/2 ]
-[ [ 2 ], [ 3 ], [ 4, 8 ], [ 5, 9 ], [ 6, 7 ] ]
  
 4=7 [ r^3+3/2*r^2+5/4*r+3/8 ]
 [ [ 2 ], [ 3 ], [ 4, 8, 9 ], [ 5, 6, 7 ] ]
