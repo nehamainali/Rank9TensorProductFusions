@@ -392,8 +392,9 @@ gap> Read("TAFusions.txt");
 4=7 [ r^3+3/2*r^2+3/2*r+1/2 ]
 [ [ 2 ], [ 3 ], [ 4, 8 ], [ 5, 9 ], [ 6, 7 ] ]  %% u=0 case %%
 
-%%%%%%%%%%%%%%%% Fusions ruled out using Bannai-Muzychuk%%%%%%%%%%%%%%5
-** For all of these fusions even if we assume that all row equalities are satisfied, the number of distinct rows are strictly more than the rank **
+%%%%%%%%%%%%%%%% Fusions ruled out using Bannai-Muzychuk%%%%%%%%%%%%%%
+
+** For all of these fusions, even assuming that all row equalities are satisfied, the number of distinct rows exceeds the rank. This is a simple application of the Bannai-Muzychuk Lemma with a few polynomials such as "k-r", "ls-rs" contained in U that were used to rule out row equalities. **
 
 
 2=5 [ r^3+5/2*r^2+2*r+1/2 ]
@@ -1904,7 +1905,7 @@ gap> Read("TAFusions.txt");
 
 
 
-%%%%%%%%%%%%%%%%  More complicated BM partitions %%%%%%%%%%%
+%%%%%%%%%%%%%%%%  For all the remaining partitions, the contradiction with the Bannai-Muzychuk Lemma is not immediately apparent. However, after further investigation, we were able to rule them out as well. These partitions fall under the category of more complicated Bannai-Muzychuk partitions. %%%%%%%%%%%
 
 
 2=3 [ r^3+3/2*r^2+3/2*r+1/2 ]
