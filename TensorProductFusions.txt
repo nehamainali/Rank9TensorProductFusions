@@ -11,7 +11,7 @@ T:=KroneckerProduct(A,A);
 
 T1:=TransposedMat(T);
 
-## Set U lists conditions that are not feasible for primitive strongly-regular graphs ##
+## The following set U contains polynomials with parameters of a primitive strongly-regular graph that do not equal zero. As we begin examining the data for feasible parameters, we add polynomials to this set and systematically rule out impossible row equalities. This process helps us identify when the desired "rank equals the number of distinct rows" condition, as outlined in the Bannai-Muzychuk Lemma, fails, thereby allowing us to eliminate certain partitions. Initially, we only had the trivial polynomials listed in row 16, but to improve the efficiency of the code output, we continued to add more polynomials that do not equal zero while eliminating incompatible row equalities. ##
 
 U:=[r-s,l+s+1,l+r+1,k-s,k*r-k*s, k*s-s^2, k*r-r^2, k*s-r*s, l*r-l*s,k+l+1,l*r+s^2+l+2*s+1,
 k*s+l*s+k,k*s+l*s+k-r+s,k*r+l*r+k+r-s, k*r+l*r+k, r*s-s^2+1/2*r-1/2*s, r^2-r*s+1/2*r-1/2*s, k*r-k*s+l*r-l*s,l*r-l*s+r-s,k*r+l*r+k+l+r+1,
